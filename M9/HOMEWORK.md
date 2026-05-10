@@ -17,7 +17,24 @@ Pochwal się na discordzie zrzutem grafany ilustrującym ruch w CP.
 
 # Zadanie 2
 
-**TODO**
+Napraw rozwalony setup 👊:
+- setup/codebase: `M9/o11y-homework`
+- działamy tylko w ramach (grafana UI): `Home > Dashboards > (OTLP) Metrics Dashboard`. Tylko ten dashboard - ale i cały setup telemetry który musi działać aby go nakarmić
+- zostało celowo wstawione **kilka** prostych, ale **trudnych do znalezienia** błędów. Ręcznie byłaby to masakra - a z AI powinno pójść relatywnie szybko.
+- **BŁĘDY mogą dotyczyć każdej płaszczyzny**: instrumentacji, konfiguracji dockera, konfiguracji w yamlach (narzędzi telemetrycznych nie-dockerowych), czy samej grafany - jej konfiga albo i konfigów samych dashboardów.
+- Naprawianie błędów będzie etapami. Jeśli komunikacja (flow danych telemetrycznych) leży, to może apka ich nie wysyła? A może Otel Collector ich nie odbiera? A jak to naprawisz - i dane będą np. dostępne w storage'u typu prometheus - to może grafana nie może się do nich dobrać? Albo grafana dane widzi, ale dashboard jest niepoprawnie skonfigurowany?
+
+Wyzwanie/pytanie: 
+- co zlecać modelowi - a co robić samodzielnie?
+- jak bardzo rozbić task na mniejsze, aby nie "zeżreć" ogromnej ilości tokenów?
+- storage telemetryczny trzeba nakarmić danymi (trzeba wygenerować jakiś ruch - "up to you" jak to zrobisz)
+
+**ZADANIE**:
+- wszystkie widgety w dashboardzie `(OTLP) Metrics Dashboard` pokazują dane - i robią to poprawnie.
+
+**CEL**: “zaradność” w szybkim/skutecznym rozwiązywaniu potencjalnie skomplikowanych problemów, przy jednoczesnym intensywnym wspomaganiu się AI przy troubleshootingu. Umiesz zidentyfikować **kilka** problemów i je naprawdić. Jednocześnie, nakierowujesz model zarówno pod kątem celu jaki chcesz osiągnąć (naprawić setup) jak i weryfikacji tego co demo robi po drodze.
+
+Koniecznie pochwal się na discordzie :) ale nie konkretnym punktem (np. która linijka kodu, port, opcja konfiguracyjna czy cokolwiek) - tylko opisowo - trzeba było naprawić (ogólnie) np. flow danych między X a Y lub dashboard itp. I wrzuć screena z dashboardem z danymi (co dowiedzie że wszystko zostało odetkane).
 
 # Zadanie 3
 
