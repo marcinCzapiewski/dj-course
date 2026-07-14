@@ -32,6 +32,12 @@ conversation_history = [
     ),
 ]
 
+total_tokens = client.models.count_tokens(
+    model=model,
+    contents=conversation_history
+)
+print("total_tokens:", total_tokens.total_tokens)
+
 response = client.models.generate_content(
     model=model,
     contents=conversation_history,
